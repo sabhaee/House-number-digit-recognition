@@ -9,7 +9,7 @@ Project structure is as follows
 - train.py # code for running training and testing
 - detect_and_classify.py # main code used in run.py to precess images and detect and classify
 - /input_images # image forlder containing images for grading
-- /graded_images # directory where image files after detection and annotaion will be saved
+- /output # directory where image files after detection and annotaion will be saved
 - /checkpoints # should contain .pth file for the saved model weights can be downloaded from the provided link ("best_svhn_model_state_MyModel_weights.pth")
 - /plots # contains plots from training 
 - /data # should contain data for training and testing data can be downloaded from the provided link
