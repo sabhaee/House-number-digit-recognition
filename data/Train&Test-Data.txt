@@ -1,0 +1,10 @@
+Preprocess Train Data: https://drive.google.com/file/d/1qRkdfkN3WmxR1yInDD2wtV3eehjjWHLD/view?usp=share_link
+
+Preprocess Test Data: https://drive.google.com/file/d/1gl0ktNFtNVBioTBw4bOB3hB1S4PwtC6K/view?usp=share_link
+
+SVHN dataset source used for creating Train & Test data datasets:
+"train_32x32.mat": http://ufldl.stanford.edu/housenumbers/train_32x32.mat
+"test_32x32.mat"::http://ufldl.stanford.edu/housenumbers/test_32x32.mat
+
+train data to extract negative examples : http://ufldl.stanford.edu/housenumbers/train.tar.gz
+test data to extract negative examples : http://ufldl.stanford.edu/housenumbers/test.tar.gz
