@@ -2,7 +2,7 @@
  
 Project structure is as follows
 ----------------------------------
-- cv_proj.yml # libraries needed to set up enironment
+- environment.yml # libraries needed to set up enironment
 - run.py # code to generate images for grading
 - data_prep.py # code to create dataset based on SVHN dataset requires download of .mat files from SVHN website
 - classifier.py # contain CNN model and dataloader neede for model inference
