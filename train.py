@@ -110,7 +110,7 @@ class SVHNTrainer:
 
             with torch.no_grad():
                 model_outputs = model(images)
-                batch_loss = nn.CrossEntropyLoss(model_outputs , targets)
+                batch_loss = nn.CrossEntropyLoss()(model_outputs , targets)
             
                 _, predictions = torch.max(model_outputs, dim=1)
 
@@ -206,7 +206,7 @@ class SVHNTrainer:
                 optimizer.zero_grad()
                 with torch.set_grad_enabled(True):
                     out = model(images)
-                    loss = nn.CrossEntropyLoss(out , targets)
+                    loss = nn.CrossEntropyLoss()(out , targets)
                     
                     _, predictions = torch.max(out, dim=1)
 
