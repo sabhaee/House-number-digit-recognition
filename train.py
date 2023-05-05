@@ -59,9 +59,9 @@ class SVHNTrainer:
         
         history = []
         last_epoch = 0
-        # Set parameter below to True to load the checkpoint. Please make sure checkpoint is downloaded and saved in the
+        # Set parameter below to True to load the checkpoint. Checkpoint to be saved in the
         # cehckpoint directory
-        load_from_checkpoint = load_checkpoint# True
+        load_from_checkpoint = load_checkpoint
         if load_from_checkpoint:
             try:
                 checkpoint = torch.load(os.path.join(self.CHKPNT_DIR, f"svhn_{chkpnt_name}_checkpoint.pth"))
@@ -100,7 +100,7 @@ class SVHNTrainer:
         for batch in val_dataLoader: 
             images, targets = batch  
             # One hot encoding for losses other than CrossEntropy
-            targets = F.one_hot(targets,11).float()
+            # targets = F.one_hot(targets,11).float()
 
             # subtracting the mean from each image
             images=images-torch.mean(images)
@@ -110,7 +110,7 @@ class SVHNTrainer:
 
             with torch.no_grad():
                 model_outputs = model(images)
-                batch_loss = nn.BCEWithLogitsLoss()(model_outputs , targets)
+                batch_loss = nn.CrossEntropyLoss(model_outputs , targets)
             
                 _, predictions = torch.max(model_outputs, dim=1)
 
@@ -199,14 +199,14 @@ class SVHNTrainer:
                 images, targets = batch 
 
                 # One hot encoding for losses other than CrossEntropy
-                targets = F.one_hot(targets,11).float()
+                # targets = F.one_hot(targets,11).float()
 
                 # subtracting the mean from each image
                 images=images-torch.mean(images)
                 optimizer.zero_grad()
                 with torch.set_grad_enabled(True):
                     out = model(images)
-                    loss = nn.BCEWithLogitsLoss()(out , targets)
+                    loss = nn.CrossEntropyLoss(out , targets)
                     
                     _, predictions = torch.max(out, dim=1)
 
