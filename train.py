@@ -1,16 +1,12 @@
 import os
 import numpy as np
 import torch
-import torchvision
 import torch.nn as nn
 import torch.nn.functional as F
-from torchvision import transforms
+from torchvision import transforms,models
 from torch.utils.data.dataloader import DataLoader
-from torch.utils.data import Dataset
 from torch.utils.data import random_split
 from classifier import SVHN_classifier, SVHN_custom_dataset, DeviceDataLoader
-from torchvision import models
-import h5py
 import matplotlib.pyplot as plt
 
 class SVHNTrainer:
