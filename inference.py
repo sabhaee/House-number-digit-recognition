@@ -1,13 +1,8 @@
 import os
 import numpy as np
 import cv2
-import copy
-import PIL
 from PIL import Image, ImageDraw
-from matplotlib import pyplot as plt
 from detect_and_classify import *
-# from detect_and_classify import _initialize 
-from classifier import SVHN_classifier,SVHN_custom_dataset
 
 IMG_DIR = "input_images"
 VID_DIR = "input_videos"
